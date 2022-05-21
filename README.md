@@ -1,34 +1,27 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Bad UI Phone Number
 
-## Getting Started
+![Showcase of Bad UI phone number](./github/showcase.mp4)
 
-First, run the development server:
+## What is this?
 
-```bash
+This is an app for the Bad UI hackathon at https://github.com/rysolv/hackathon. The challenge was to make a bad phone number input in 24 hours. This submission, I built a phone number input in which each digit is a column of numbers with incrementally increasing gravity. You need to align the numbers of your phone number.
+
+## How do I run it?
+
+Visit https://badui-phone-input.web.app/, or run the following command in your terminal:
+
+```
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+You can control the speed by imperatively changing the `acceleration` query parameter (default is 0.0002) or by finishing the phone number input and selecting a difficulty on the bottom.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## How is it built?
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+It's a standard input field, but when clicking a button, a modal pops up.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+The phone number is a row of columns, each column contains 20 numbers of 0-9 and 0-9 again.
 
-## Learn More
+At every animation frame, every column gradually moves faster. The speed moves based off of the acceleration value.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+If you drag a column, it follows the mouse, but if you let go. It uses the current mouse velocity for the speed of the value.
