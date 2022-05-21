@@ -1,6 +1,6 @@
 # Bad UI Phone Number
 
-![Showcase of Bad UI phone number](./github/showcase.mp4)
+![Showcase of Bad UI phone number](./github/showcase.gif)
 
 ## What is this?
 
